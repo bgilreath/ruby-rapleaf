@@ -1,3 +1,15 @@
+=== 0.2.2 / 2010/10/18
+
+* Allow specifying the read_timeout to pass through to Net::HTTP.
+  There are a few reasons why you might want to do this.  One is that
+  Net::HTTP's read_timeout is implemented using timeout.rb, which is known
+  to have race conditions, and in particular is unsafe to use in
+  EventMachine (because it can sometimes throw exceptions in the main
+  event loop and kill the whole process); so this lets you disable the
+  timeout entirely.
+
+* Ruby 1.9 compatibility tweak (thanks to Justin Ip)
+
 === 0.2.1 / 2010/04/27
 
 * If unexpected response code, exception should include diagnostic info
