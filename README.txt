@@ -72,7 +72,7 @@ provided below.
 
 RUBY LICENSE
 
-Copyright (c) 2008-2010 Glenn Rempe, 2010 Sam Stokes
+Copyright (c) 2008-2010 Glenn Rempe, 2010 Sam Stokes, Justin Ip
 
 http://www.ruby-lang.org/en/LICENSE.txt
 
