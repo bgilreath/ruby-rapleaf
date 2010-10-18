@@ -25,8 +25,8 @@ module Rapleaf
     # Examples:
     #  person(:email => 'dummy@rapleaf.com')
     #  person(:site => :twitter, :profile => 'samstokes')
-    #  person(:sha1 => SHA1.hexdigest('dummy@rapleaf.com'))
-    #  person(:md5 => MD5.hexdigest('dummy@rapleaf.com'))
+    #  person(:sha1 => Digest::SHA1.hexdigest('dummy@rapleaf.com'))
+    #  person(:md5 => Digest::MD5.hexdigest('dummy@rapleaf.com'))
     def person( opts = {} )
       resp = fetch_response(URI.parse(person_url(opts)))
 
