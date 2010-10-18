@@ -1,6 +1,6 @@
 = ruby-rapleaf
 
-* http://github.com/samstokes/ruby-rapleaf
+* http://github.com/rapportive-oss/ruby-rapleaf
 
 == DESCRIPTION:
 
@@ -27,7 +27,7 @@ glenn@rempe.us
 
 === Updated (v3 API compatible)
 
-http://github.com/samstokes/ruby-rapleaf
+http://github.com/rapportive-oss/ruby-rapleaf
 
 Sam Stokes
 sam@rapportive.com
@@ -60,7 +60,7 @@ Sorry, there's no hosted gem at the moment!
 
 You can build the gem yourself and install as a Ruby Gem with:
 
-  git clone git://github.com/samstokes/ruby-rapleaf.git
+  git clone git://github.com/rapportive-oss/ruby-rapleaf.git
   cd ruby-rapleaf
   rake gem
   rake install_gem
