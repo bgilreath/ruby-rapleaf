@@ -9,13 +9,15 @@ module Rapleaf
       options = {
                   :api_host     => API_HOST,
                   :api_port     => API_PORT,
-                  :api_version  => API_VERSION
+                  :api_version  => API_VERSION,
+                  :api_read_timeout => 30,
                 }.merge(options)
 
       @api_key  = api_key
       @host     = options[:api_host]
       @port     = options[:api_port]
       @version  = options[:api_version]
+      @read_timeout  = options[:api_read_timeout]
     end
 
     # This resource is used to retrieve information about a person, identified
@@ -26,7 +28,7 @@ module Rapleaf
     #  person(:sha1 => SHA1.hexdigest('dummy@rapleaf.com'))
     #  person(:md5 => MD5.hexdigest('dummy@rapleaf.com'))
     def person( opts = {} )
-      resp = Net::HTTP.get_response(URI.parse(person_url(opts)))
+      resp = fetch_response(URI.parse(person_url(opts)))
 
       case resp.code
       when '200'
@@ -51,6 +53,20 @@ module Rapleaf
     end
 
   private
+    def fetch_response(uri)
+      # Have to do this a verbose way in order to override Net::HTTP's
+      # default read_timeout
+
+      http = Net::HTTP.new(uri.host, uri.port)
+      if uri.scheme == 'https'
+        http.use_ssl = true
+        http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+      end
+      http.read_timeout = @read_timeout
+
+      http.start { http.get(uri.path + '?' + uri.query) }
+    end
+
     def person_url(opts)
       email = opts[:email]
 
