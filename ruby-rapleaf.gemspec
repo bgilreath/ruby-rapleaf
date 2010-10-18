@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = ["History.txt", "Manifest.txt", "README.txt"]
   s.files = ["History.txt", "Manifest.txt", "README.txt", "Rakefile", "examples/person.rb", "lib/ruby-rapleaf.rb", "lib/rapleaf/exceptions.rb", "lib/rapleaf/rapleaf.rb", "lib/rapleaf/responses.rb", "ruby-rapleaf.gemspec"]
   s.has_rdoc = true
-  s.homepage = %q{http://github.com/samstokes/ruby-rapleaf}
+  s.homepage = %q{http://github.com/rapportive-oss/ruby-rapleaf}
   s.rdoc_options = ["--main", "README.txt"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{ruby-rapleaf}
