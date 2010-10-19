@@ -61,7 +61,7 @@ The following gems are required for installation of the ruby-rapleaf gem.
 
 == INSTALL:
 
-Sorry, there's no hosted gem at the moment!
+  gem install ruby-rapleaf
 
 You can build the gem yourself and install as a Ruby Gem with:
 
