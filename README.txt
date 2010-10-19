@@ -18,6 +18,11 @@ The code was extensively re-written by Glenn Rempe so it would work with the
 then-current Rapleaf v2 API, and further modified by Sam Stokes to support the
 v3 API.
 
+Please direct any questions, patches, pull requests or bug reports to
+Sam Stokes <sam@rapportive.com>.
+
+This project is not affiliated with, or endorsed or supported by, Rapleaf.
+
 === Original (v2 API compatible)
 
 http://github.com/grempe/ruby-rapleaf
