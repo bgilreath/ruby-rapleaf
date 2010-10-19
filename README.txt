@@ -67,8 +67,8 @@ You can build the gem yourself and install as a Ruby Gem with:
 
   git clone git://github.com/rapportive-oss/ruby-rapleaf.git
   cd ruby-rapleaf
-  rake gem
-  rake install_gem
+  gem build ruby-rapleaf.gemspec
+  gem install ruby-rapleaf-*.gem
 
 == LICENSE:
 
