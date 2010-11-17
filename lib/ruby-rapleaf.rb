@@ -16,9 +16,10 @@ module Rapleaf
   VERSION = '0.2.2'
 
   # API Constants
-  API_HOST = 'api.rapleaf.com'
+  #API_HOST = 'api.rapleaf.com'
+  API_HOST = 'personalize.rlcdn.com'
   API_PORT = 80
-  API_VERSION = 'v3'
+  API_VERSION = 'v4'
 
 end
 

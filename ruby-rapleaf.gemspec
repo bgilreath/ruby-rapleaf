@@ -1,12 +1,12 @@
 Gem::Specification.new do |s|
   s.name = %q{ruby-rapleaf}
-  s.version = "0.2.2"
+  s.version = "0.2.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Glenn Rempe", "Sam Stokes", "Justin Ip"]
-  s.date = %q{2010-10-18}
+  s.authors = ["Glenn Rempe", "Sam Stokes", "Justin Ip", "Brad Gilreath"]
+  s.date = %q{2010-11-17}
   s.description = %q{Rapleaf's goal is to make the internet safe and transparent, by allowing you to evaluate your web footprint across a variety of user-generated sites. See http://www.rapleaf.com for more information.}
-  s.email = ["glenn@rempe.us", "sam@rapportive.com"]
+  s.email = ["glenn@rempe.us", "sam@rapportive.com", "bwgilreath@gmail.com"]
   s.extra_rdoc_files = ["History.txt", "Manifest.txt", "README.txt"]
   s.files = ["History.txt", "Manifest.txt", "README.txt", "Rakefile", "examples/person.rb", "lib/ruby-rapleaf.rb", "lib/rapleaf/exceptions.rb", "lib/rapleaf/rapleaf.rb", "lib/rapleaf/responses.rb", "ruby-rapleaf.gemspec"]
   s.has_rdoc = true

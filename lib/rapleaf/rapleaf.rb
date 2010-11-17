@@ -5,7 +5,9 @@ module Rapleaf
 
   class Base
 
+
     def initialize(api_key, options = {})
+      #personalize.rlcdn.com
       options = {
                   :api_host     => API_HOST,
                   :api_port     => API_PORT,
@@ -105,6 +107,16 @@ module Rapleaf
         else
           person_url_v3_by_hash(:sha1, sha1)
         end
+      when "v4"
+        if email
+          person_url_v4_by_email(email)
+        elsif site_profile
+          person_url_v4_by_site_profile(*site_profile)
+        elsif md5
+          person_url_v4_by_hash(:md5, md5)
+        else
+          person_url_v4_by_hash(:sha1, sha1)
+        end
       else
         raise ArgumentError, "Person queries not supported for API version #{@version}"
       end
@@ -118,6 +130,10 @@ module Rapleaf
       "http://#{@host}:#{@port}/v3/person/email/#{email}?api_key=#{@api_key}"
     end
 
+    def person_url_v4_by_email(email)
+      "https://#{@host}:#{@port}/v4/dr?email=#{email}&api_key=#{@api_key}"
+    end
+
     def person_url_v3_by_site_profile(site, profile)
       # TODO validate param formats
       "http://#{@host}:#{@port}/v3/person/web/#{site}/#{profile}?api_key=#{@api_key}"
@@ -125,6 +141,11 @@ module Rapleaf
 
     def person_url_v3_by_hash(algo, hash)
       "http://#{@host}:#{@port}/v3/person/hash/#{algo}/#{hash}?api_key=#{@api_key}"
+    end
+
+    def person_url_v4_by_hash(algo, hash)
+      "https://personalize.rlcdn.com/v4/dr?#{algo}=#{hash}&api_key=#{@api_key}"
+      #{}"http://#{@host}:#{@port}/v3/person/hash/#{algo}/#{hash}?api_key=#{@api_key}"
     end
 
   end
